@@ -12,10 +12,10 @@ namespace MyNUnitTests.model
 
         public int wheels { get; set; }
 
-        public Vehicle(String color, int wheels)
+        public Vehicle(String c, int w)
         {
-            this.color = color;
-            this.wheels = wheels;
+            color = c;
+            wheels = w;
         }
 
         public Boolean isValidColor(String color)

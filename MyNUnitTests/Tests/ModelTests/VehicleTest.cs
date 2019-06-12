@@ -11,6 +11,7 @@ namespace MyNUnitTests.Tests.ModelTests
     [Category("modelTests")]
     [TestFixture]
     [Parallelizable(ParallelScope.Fixtures)]
+    [Author("M M", "a@a.com")]
     class VehicleTest
     {
         Vehicle vehicle; 
@@ -35,6 +36,7 @@ namespace MyNUnitTests.Tests.ModelTests
         [TestCase(6)]
         [TestCase(2)]
         [TestCase(18)]
+        [TestCase(8)]
         public void testAllValidWheels(int totalWheels)
         {
             Assert.IsTrue(vehicle.isValidNumberOfWheels(totalWheels)); 
