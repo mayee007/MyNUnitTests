@@ -7,6 +7,7 @@ namespace MyNUnitTests
 {
     [Category("guiTests")]
     [TestFixture]
+    [Parallelizable(ParallelScope.Fixtures)]
     public class GoogleMainPageTest
     {
         IWebDriver driver;
@@ -26,8 +27,8 @@ namespace MyNUnitTests
             title = "Google";
         }
 
-        [TestCase]
-        [Timeout(10000)] // 10 seconds 
+        [TestCase, Timeout(10000)] // 10 seconds max time limit 
+        [Repeat(5)] // repeat this test 5 times 
         public void openHomePageTest()
         {
             driver.Navigate().GoToUrl(url);
@@ -35,7 +36,8 @@ namespace MyNUnitTests
             driver.Close(); //closes window                              
         }
 
-        [TestCase] // method 1 - simple 
+        [TestCase, Repeat(5)] // method 1 - simple 
+                              // repeat this test 5 times 
         public void getTitleTest()
         {
             driver.Navigate().GoToUrl(url);

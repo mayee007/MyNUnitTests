@@ -10,6 +10,7 @@ namespace MyNUnitTests.Tests.ModelTests
 {
     [Category("modelTests")]
     [TestFixture]
+    [Parallelizable(ParallelScope.Fixtures)]
     class VehicleTest
     {
         Vehicle vehicle; 

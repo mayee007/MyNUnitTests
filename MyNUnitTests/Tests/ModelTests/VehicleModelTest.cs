@@ -10,6 +10,7 @@ namespace MyNUnitTests.Tests.ModelTests
 {
     [Category("modelTests")]
     [TestFixture]
+    [Parallelizable(ParallelScope.Fixtures)]
     class VehicleModelTest
     {
         Vehicle vehicle; 
@@ -24,6 +25,7 @@ namespace MyNUnitTests.Tests.ModelTests
         public void destroy()
         {}
 
+        [Repeat(1000)]
         [TestCase(4, ExpectedResult = true)]
         [TestCase(1, ExpectedResult = false)]
         [TestCase(0, ExpectedResult = false)]
@@ -41,6 +43,7 @@ namespace MyNUnitTests.Tests.ModelTests
         [TestCase("silver", ExpectedResult = false)]
         [TestCase("", ExpectedResult = false)]
         [TestCase("blue", ExpectedResult = false)]
+        [Repeat(20)]
         public Boolean testColor(String color)
         {
             return vehicle.color.Equals(color);

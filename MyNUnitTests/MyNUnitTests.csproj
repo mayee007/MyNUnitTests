@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tests\GUI\GoogleMainPageTestInputData.cs" />
     <Compile Include="Tests\GUI\GoogleMainPageTest.cs" />
     <Compile Include="model\Vehicle.cs" />
     <Compile Include="model\VehicleImpl.cs" />
